@@ -5,7 +5,8 @@ const path = require("path");
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:8081/",
+    publicPath: process.env.PUBLIC_PATH,
+    path: path.resolve(__dirname, "../build"),
   },
 
   resolve: {
@@ -45,8 +46,8 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        orbit: "orbit@http://localhost:3000/remoteEntry.js",
-        auth: "boilerplate@http://localhost:8080/remoteEntry.js",
+        orbit: `orbit@@${process.env.ORBIT_PATH}remoteEntry.js`,
+        auth: `boilerplate@${process.env.BOILERPLATE_PATH}remoteEntry.js`,
       },
       exposes: {},
       shared: deps,
