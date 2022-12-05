@@ -14,7 +14,6 @@ const AuthApp = () => {
   React.useEffect(() => {
     jonas.current = mount(ref.current, {
       onNavigate: (loc: any) => {
-        console.log({loc, location});
         if (
           loc.pathname !== location.pathname ||
           loc.hash !== location.hash ||
