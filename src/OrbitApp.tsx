@@ -18,7 +18,6 @@ const OrbitApp = () => {
           args.hash !== windowLocation.hash ||
           args.search !== windowLocation.search
         ) {
-          console.log("rodou onNavigate");
           navigate(`${args.pathname}${args.search}${args.hash}`, {
             state: args.state,
           });

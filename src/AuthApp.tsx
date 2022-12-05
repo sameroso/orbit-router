@@ -6,7 +6,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 const AuthApp = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const jonas = React.useRef<any>(null);
 
