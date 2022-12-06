@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
-const dotEnv = require("dotenv")
+const dotEnv = require("dotenv");
 const DefinePlugin = require("webpack").DefinePlugin;
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -64,6 +64,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
+      publicPath: process.env.PUBLIC_PATH,
     }),
   ],
 };
